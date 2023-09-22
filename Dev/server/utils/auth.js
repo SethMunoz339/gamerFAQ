@@ -1,7 +1,7 @@
 const { GraphQLError } = require('graphql');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
-const secret = 'mysecretssshhhhhhh';
 const expiration = '2h';
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
 
     // if token can be verified, add the decoded user's data to the request so it can be accessed in the resolver
     try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
+      const { data } = jwt.verify(token, process.env.secret, { maxAge: expiration });
       req.user = data;
     } catch {
       console.log('Invalid token');
