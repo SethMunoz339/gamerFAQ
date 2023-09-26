@@ -1,4 +1,4 @@
-const { Profile } = require('../models');
+const { Profile, Game } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -13,6 +13,7 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    games: async (parent, args)
   },
 
   Mutation: {
