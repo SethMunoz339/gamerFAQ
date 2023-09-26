@@ -13,7 +13,12 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    games: async (parent, args)
+    games: async (parent, args) => {
+      return Game.find();
+    },
+    game: async (parent, { gameId }) => {
+      return Game.findOne({ _id:gameId });
+    }
   },
 
   Mutation: {
@@ -47,6 +52,8 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+
+    addGame: async (parent, { name, developer, releaseDate, genres })
   },
 };
 

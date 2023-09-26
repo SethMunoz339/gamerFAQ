@@ -4,6 +4,16 @@ const typeDefs = `
     name: String
     email: String
     password: String
+    questions: [Question]
+  }
+
+  type Game {
+    _id: ID
+    name: String
+    developer: String
+    release: Date
+    genres: [String]
+    questions: [Question]
   }
 
   type Auth {
@@ -13,6 +23,7 @@ const typeDefs = `
 
   type Query {
     profiles: [Profile]!
+    games: [Game]!
     profile(profileId: ID!): Profile
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile

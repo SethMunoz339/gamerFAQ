@@ -16,14 +16,9 @@ const gameSchema = new Schema({
     type: Date,
     required: true,
   },
-  genres: [
-    {
-        genreName: {
-            type: String,
-            required: true,
-        },
-    },
-  ],
+  genres: {
+    type: [String]
+  },
   questions: [
     {
       type: Schema.Types.ObjectId,
