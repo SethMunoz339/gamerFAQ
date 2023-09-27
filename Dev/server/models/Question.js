@@ -15,6 +15,10 @@ const questionSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    gameId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Game',
+    },
     comments: [
         {
             commentText: {

@@ -18,13 +18,7 @@ const gameSchema = new Schema({
   },
   genres: {
     type: [String]
-  },
-  questions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Question'
-    }
-  ],
+  }
 });
 
 const Game = model('Game', gameSchema);

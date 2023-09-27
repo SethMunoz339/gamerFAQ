@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
-import { ADD_QUESTION } from "../../utils/mutations";
+import { ADD_QUESTION } from "";
 import { QUERY_QUESTIONS, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
