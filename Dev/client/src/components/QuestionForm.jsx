@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
-import { ADD_QUESTION } from "";
-import { QUERY_QUESTIONS, QUERY_ME } from "../../utils/queries";
+import { ADD_QUESTION } from "../utils/mutations";
+import { QUERY_QUESTIONS, QUERY_ME } from "../utils/queries";
 
-import Auth from "../../utils/auth";
+import Auth from "../utils/auth";
 
 const QuestionForm = () => {
   const [questionText, setQuestionText] = useState("");
@@ -84,7 +84,7 @@ const QuestionForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your questionss. Please{" "}
+          You need to be logged in to share your questions. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
