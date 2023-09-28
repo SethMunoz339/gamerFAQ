@@ -40,8 +40,8 @@ export const ADD_THOUGHT = gql`
 `;
 
 export const ADD_QUESTION = gql`
-  mutation addComment($questionId: ID!, $commentText: String!) {
-    addComment(questionId: $questionId, commentText: $commentText) {
+  mutation addComment($thoughtId: ID!, $commentText: String!) {
+    addComment(thoughtId: $thoughtId, commentText: $commentText) {
       _id
       questionText
       questionAuthor
