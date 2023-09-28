@@ -1,18 +1,18 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from './App.jsx';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import ErrorPage from './pages/ErrorPage';
+import App from './App';
+import Home from './components/Home';
+// import Profile from './pages/Profile';
+import Signup from './components/Signup';
+import Login from './components/Login';
+// import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -23,13 +23,15 @@ const router = createBrowserRouter([
       }, {
         path: '/signup',
         element: <Signup />
-      }, {
-        path: '/profiles/:profileId',
-        element: <Profile />
-      }, {
-        path: '/me',
-        element: <Profile />
       }
+      
+      //   path: '/profiles/:profileId',
+      //   element: <Profile />
+      // },
+      // {
+      //   path: '/me',
+      //   element: <Profile />
+      // }
     ]
   },
 ]);
