@@ -1,5 +1,93 @@
 [
+        {
+            "name": "Minecraft",
+            "developer": "Mojang",
+            "releaseDate": "2009-05-17",
+            "genre": "Sandbox",
+            "URL": "https://www.minecraft.net/en-us/"
+        },
+        {
+            "name": "Red Dead Redemption 2",
+            "developer": "Rockstar Games",
+            "releaseDate": "2018-10-26",
+            "genre": "Action-adventure",
+            "URL": "https://www.rockstargames.com/reddeadredemption2/"
+        },
+        {
+            "name": "Overwatch",
+            "developer": "Blizzard Entertainment",
+            "releaseDate": "2016-05-24",
+            "genre": "First-person shooter",
+            "URL": "https://playoverwatch.com/en-us/"
+        },
+        {
+            "name": "Grand Theft Auto V",
+            "developer": "Rockstar Games",
+            "releaseDate": "2013-09-17",
+            "genre": "Action-adventure",
+            "URL": "https://www.rockstargames.com/V/"
+        },
+        {
+            "name": "League of Legends",
+            "developer": "Riot Games",
+            "releaseDate": "2009-10-27",
+            "genre": "Multiplayer online battle arena",
+            "URL": "https://na.leagueoflegends.com/en-us/"
+        },
+        {
+            "name": "World of Warcraft",
+            "developer": "Blizzard Entertainment",
+            "releaseDate": "2004-11-23",
+            "genre": "MMORPG",
+            "URL": "https://worldofwarcraft.com/en-us/"
+        },
+        {
+            "name": "Fortnite",
+            "developer": "Epic Games",
+            "releaseDate": "2017-07-25",
+            "genre": "Survival",
+            "URL": "https://www.epicgames.com/fortnite/en-US/home"
+        },
+        {
+            "name": "Apex Legends",
+            "developer": "Respawn Entertainment",
+            "releaseDate": "2019-02-04",
+            "genre": "Battle royale",
+            "URL": "https://www.ea.com/games/apex-legends"
+        },
+        {
+            "name": "Counter-Strike: Global Offensive",
+            "developer": "Valve Corporation",
+            "releaseDate": "2012-08-21",
+            "genre": "First-person shooter",
+            "URL": "https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"
+        },
+        {
+            "name": "Baldur's Gate 3",
+            "developer": "Larian Studios",
+            "releaseDate": "2020-10-06",
+            "genre": "RPG",
+            "URL": "https://baldursgate3.game/"
+        },
+        {
+            "name": "Destiny 2",
+            "developer": "Bungie",
+            "releaseDate": "2017-09-06",
+            "genre": "First-person shooter",
+            "URL": "https://www.bungie.net/7/en/Destiny/NewLight"
+        },
+        {
+            "name": "Northgard",
+            "developer": "Shiro Games",
+            "releaseDate": "2018-03-07",
+            "genre": "Strategy",
+            "URL": "https://store.steampowered.com/app/466560/Northgard/"
+    },
     {
-        
+            "name": "Civilization VI",
+            "developer": "Firaxis Games",
+            "releaseDate": "2016-10-21",
+            "genre": "Strategy",
+            "URL": "https://civilization.com/"
     }
 ]
