@@ -84,7 +84,7 @@ const QuestionForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your questionss. Please{" "}
+          You need to be logged in to share your questions. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
