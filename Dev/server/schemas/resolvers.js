@@ -1,15 +1,34 @@
-const { Profile, Game, Question } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { Profile, Game, Question } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
+const { GraphQLScalarType, Kind } = require("graphql");
 
-const resolvers = {
+
+ const resolvers = {
+  Date: new GraphQLScalarType({
+    name: "Date",
+    description: "Date custom scalar type",
+    parseValue(value) {
+      return new Date(value); // value from the client
+    },
+    serialize(value) {
+      return value.getTime(); // value sent to the client
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return new Date(+ast.value); // ast value is always in string format
+      }
+      return null;
+    },
+  }),
+
   Query: {
     profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId }).populate('questions');
+      return Profile.findOne({ _id: profileId }).populate("questions");
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id }).populate('questions');
+        return Profile.findOne({ _id: context.user._id }).populate("questions");
       }
       throw AuthenticationError;
     },
@@ -17,8 +36,8 @@ const resolvers = {
       return Game.find();
     },
     game: async (parent, { gameId }) => {
-      const singleGame = Question.find({ gameId: gameId }).populate('gameId');
-      return singleGame
+      const singleGame = Question.find({ gameId: gameId }).populate("gameId");
+      return singleGame;
     },
   },
 
@@ -55,7 +74,14 @@ const resolvers = {
     },
 
     addGame: async (parent, { name, developer, releaseDate, genres }) => {
-      const newGame = await Game.create({ name, developer, releaseDate, genres });
+      const newGame = await Game.create({
+      
+        name,
+        developer,
+        releaseDate,
+        genres,
+    
+      });
       return newGame;
     },
 
@@ -65,7 +91,11 @@ const resolvers = {
 
     addQuestion: async (parent, { gameId, questionText }, context) => {
       if (context.user) {
-        const newQuestion = await Question.create({ questionText, questionAuthor: context.user.name, gameId });
+        const newQuestion = await Question.create({
+          questionText,
+          questionAuthor: context.user.name,
+          gameId,
+        });
         context.user.questions.push(newQuestion._id);
         await context.user.save();
 
