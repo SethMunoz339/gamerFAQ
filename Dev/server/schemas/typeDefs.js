@@ -11,7 +11,7 @@ const typeDefs = `
     _id: ID!
     name: String!
     developer: String
-    release: Date
+    releaseDate: Date
     genres: [String]
     URL: String
     questions: [Question]
