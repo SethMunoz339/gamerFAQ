@@ -16,16 +16,16 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_GAMES = gql`
-  query GetGames {
-    games {
-      _id
-      name
-      developer
-      releaseDate
-      genre
-      URL
-    }
+query Games {
+  games {
+    URL
+    _id
+    developer
+    genres
+    name
+    releaseDate
   }
+}
 `;
 
 export const QUERY_QUESTIONS = gql`

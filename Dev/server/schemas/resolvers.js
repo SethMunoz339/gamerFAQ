@@ -75,12 +75,10 @@ const { GraphQLScalarType, Kind } = require("graphql");
 
     addGame: async (parent, { name, developer, releaseDate, genres }) => {
       const newGame = await Game.create({
-      
         name,
         developer,
         releaseDate,
         genres,
-    
       });
       return newGame;
     },
