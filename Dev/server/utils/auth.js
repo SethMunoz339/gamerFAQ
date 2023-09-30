@@ -25,7 +25,7 @@ module.exports = {
 
     // if token can be verified, add the decoded user's data to the request so it can be accessed in the resolver
     try {
-      const { data } = jwt.verify(token, process.env.secret, {
+      const { data } = jwt.verify(token, process.env.SECRET, {
         maxAge: expiration,
       });
       req.user = data;
@@ -38,6 +38,6 @@ module.exports = {
   },
   signToken: function ({ email, name, _id }) {
     const payload = { email, name, _id };
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+    return jwt.sign({ data: payload }, process.env.SECRET, { expiresIn: expiration });
   },
 };

@@ -30,7 +30,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
       if (context.user) {
         return Profile.findOne({ _id: context.user._id }).populate("questions");
       }
-      throw AuthenticationError;
+      throw new AuthenticationError ("error");
     },
     games: async (parent, args) => {
       return Game.find();
@@ -52,13 +52,13 @@ const { GraphQLScalarType, Kind } = require("graphql");
       const profile = await Profile.findOne({ email });
 
       if (!profile) {
-        throw AuthenticationError;
+        throw new AuthenticationError;
       }
 
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw AuthenticationError;
+        throw new AuthenticationError;
       }
 
       const token = signToken(profile);
@@ -70,7 +70,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
       if (context.user) {
         return Profile.findOneAndDelete({ _id: context.user._id });
       }
-      throw AuthenticationError;
+      throw new AuthenticationError;
     },
 
     addGame: async (parent, { name, developer, releaseDate, genres }) => {
@@ -101,7 +101,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
 
         return { newQuestion };
       }
-      throw AuthenticationError;
+      throw new AuthenticationError;
     },
 
     deleteQuestion: async (parent, { questionId }, context) => {
@@ -111,7 +111,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
 
         return Question.findByIdAndDelete({ _id: questionId });
       }
-      throw AuthenticationError;
+      throw new AuthenticationError;
     },
 
     addComment: async (parent, { questionId, commentText }, context) => {
@@ -129,7 +129,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
           }
         );
       }
-      throw AuthenticationError;
+      throw new AuthenticationError;
     },
 
     removeComment: async (parent, { questionId, commentId }, context) => {
@@ -147,7 +147,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
           { new: true }
         );
       }
-      throw AuthenticationError;
+      throw new AuthenticationError;
     },
   },
 };

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import logoImage from "../../assets/images/Logo-3.png";
 
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
