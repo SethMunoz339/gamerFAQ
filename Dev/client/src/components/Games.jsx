@@ -14,8 +14,8 @@ const GetGames = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {data?.map((game, index) => (
+      <div className="card-header bg-dark text-light p-2 m-0">
+        {data?.games.map((game, index) => (
           <div key={index}>
             <h1>{game.name}</h1>
             <h3>{game.URL}</h3>
@@ -23,8 +23,8 @@ const GetGames = () => {
             <h3>{game.genre}</h3>
             <h5>{game.releaseDate}</h5>
           </div>
-        ))}{" "}
-      </h3>
+        ))}
+      </div>
     </div>
   );
 };
