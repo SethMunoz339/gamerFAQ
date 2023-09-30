@@ -10,7 +10,6 @@ const gameSchema = new Schema({
   developer: {
     type: String,
     required: true,
-    unique: true,
   },
   releaseDate: {
     type: Date,

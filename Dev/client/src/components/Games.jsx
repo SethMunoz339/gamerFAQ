@@ -7,15 +7,7 @@ import CommentForm from "./CommentForm";
 import { QUERY_GAMES } from "../utils/queries";
 
 const GetGames = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { gameId } = useParams();
-
-  const { loading, data } = useQuery(QUERY_GAMES, {
-    // pass URL parameter
-    variables: { gameId: gameId },
-  });
-
-  const game = data?.game || {};
+  const { loading, data } = useQuery(QUERY_GAMES);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -23,13 +15,13 @@ const GetGames = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {game.map((game, index) => (
+        {data?.map((game, index) => (
           <div key={index}>
             <h1>{game.name}</h1>
-            <h2>{game.developer}</h2>
+            <h3>{game.URL}</h3>
+            <h3>{game.developer}</h3>
             <h3>{game.genre}</h3>
             <h5>{game.releaseDate}</h5>
-            <h5>{game.URL}</h5>
           </div>
         ))}{" "}
       </h3>

@@ -16,12 +16,12 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_GAMES = gql`
-  query getGames {
+  query GetGames {
     games {
       _id
       name
       developer
-      ReleaseDate
+      releaseDate
       genre
       URL
     }
