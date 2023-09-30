@@ -366,6 +366,7 @@
   html,
   body {
     min-height: 100%;
+    background-color: #080C22;
   }
   
   body {
@@ -387,10 +388,12 @@
     font-family: 'JetBrains Mono', monospace;
     margin: 0 0 0.5rem;
     line-height: 1.25;
+    color: #1E8BFD;
   }
   
   h1 {
     font-size: 2.25rem;
+    color: #891688;
   }
   
   h2 {
@@ -417,6 +420,7 @@
     font-size: 1.1rem;
     margin: 0 0 1rem;
     line-height: 1.5;
+    color: #1E8BFD;
   }
   
   ul,
@@ -438,7 +442,7 @@
   }
   
   a {
-    color: #1b89bc;
+    color: #20E3F9;
     text-decoration: none;
   }
   
@@ -476,6 +480,7 @@
   /* Margin - all sides */
   .m-0 {
     margin: 0 !important;
+    color: #891688;
   }
   
   .m-1 {
@@ -918,7 +923,7 @@
   }
   
   .text-dark {
-    color: #1a1a1a !important;
+    color: #891688 !important;
   }
   
   .text-white {
@@ -939,7 +944,7 @@
   }
   
   .bg-info {
-    background-color: #1bbc9b !important;
+    background-color: #20E3F9 !important;
   }
   
   .bg-danger {
@@ -1027,12 +1032,12 @@
   }
   
   .btn.btn-primary {
-    background-color: #2d3e50;
-    color: #d9e9e8;
+    background-color: #1E8BFD;
+    color: #F6FDFF;
   }
   
   .btn.btn-primary:hover {
-    background-color: #57779a;
+    background-color: #891688;
   }
   
   .btn.btn-danger {

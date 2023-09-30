@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
-import logoImage from '../../assets/images/Logo-3.png';
+import logoImage from "../../assets/images/Logo-3.png";
 
 const Header = () => {
   const logout = (event) => {
@@ -12,11 +12,7 @@ const Header = () => {
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         <Link className="text-dark" to="/">
-        <img 
-            src={logoImage} 
-            alt="Logo" 
-            className="logo-style" 
-          />
+          <img src={logoImage} alt="Logo" className="logo-style" />
           <h1 className="m-0" style={{ fontSize: "3rem" }}>
             Gaming Questions?
           </h1>
@@ -40,7 +36,7 @@ const Header = () => {
             <Link className="btn btn-lg btn-primary m-2" to="/login">
               Login
             </Link>
-            <Link className="btn btn-lg btn-light m-2" to="/signup">
+            <Link className="btn btn-lg btn-primary m-2" to="/signup">
               Signup
             </Link>
           </>
