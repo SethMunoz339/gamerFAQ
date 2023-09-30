@@ -31,7 +31,7 @@ const SingleGame = () => {
       </h3>
       <h3>Developed By: {game.developer}</h3>
       <h3>Genres: {game.genres}</h3>
-      <h5>Release Date: {game.releaseDate}</h5>
+      <h5>Release Date: {new Date(game.releaseDate).toLocaleDateString()}</h5>
     </div>
   );
 };
