@@ -24,6 +24,7 @@ const typeDefs = `
   type Auth {
     token: ID!
     profile: Profile
+     
   }
 
   type Question {
