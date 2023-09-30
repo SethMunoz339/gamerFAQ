@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import CommentList from "./CommentList";
@@ -18,10 +18,11 @@ const GetGames = () => {
         {data?.games.map((game, index) => (
           <div key={index}>
             <h1>{game.name}</h1>
-            <h3>{game.URL}</h3>
-            <h3>{game.developer}</h3>
-            <h3>{game.genre}</h3>
-            <h5>{game.releaseDate}</h5>
+            <h3>Game Site:{game.URL}</h3>
+            <h3>Developed By:{game.developer}</h3>
+            <h3>Genres:{game.genres}</h3>
+            <h5>Release Date:{game.releaseDate}</h5>
+            <button><Link to={`/single-game/${game._id}`}>Ask/View Qs</Link></button> 
           </div>
         ))}
       </div>

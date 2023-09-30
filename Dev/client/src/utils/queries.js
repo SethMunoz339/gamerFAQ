@@ -23,7 +23,7 @@ query Games {
     developer
     genres
     name
-    release
+    releaseDate
   }
 }
 `;
