@@ -24,6 +24,7 @@ const typeDefs = `
   type Auth {
     token: ID!
     profile: Profile
+     
   }
 
   type Question {
@@ -45,6 +46,7 @@ const typeDefs = `
     profile(profileId: ID!): Profile
     me: Profile
     game(gameId: ID!): Game
+    questions(gameId: ID!): [Question]
   }
 
 

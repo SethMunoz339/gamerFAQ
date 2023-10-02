@@ -4,7 +4,7 @@ export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
-      username
+      name
       email
       thoughts {
         _id
@@ -28,23 +28,6 @@ query Games {
 }
 `;
 
-export const QUERY_QUESTIONS = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
-    }
-  }
-`;
-
 export const QUERY_ME = gql`
   query me {
     me {
@@ -59,4 +42,20 @@ export const QUERY_ME = gql`
       }
     }
   }
+`;
+
+export const QUERY_QUESTIONS = gql `
+query questions($gameId: ID!) {
+  questions(gameId: $gameId) {
+    _id
+    questionText
+    questionAuthor
+    questionCreatedAt
+    gameId
+    comments {
+      commentText
+      commentAuthor
+    }
+  }
+}
 `;

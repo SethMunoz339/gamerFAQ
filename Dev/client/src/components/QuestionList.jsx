@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import CommentForm from "./CommentForm" ;
 const QuestionList = ({
   questions,
   title,
@@ -38,12 +38,7 @@ const QuestionList = ({
             <div className="card-body bg-light p-2">
               <p>{question.questionText}</p>
             </div>
-            <Link
-              className="btn btn-primary btn-block btn-squared"
-              to={`/questions/${question._id}`}
-            >
-              Join the discussion on this question.
-            </Link>
+            <CommentForm questionId={question._id}/>
           </div>
         ))}
     </div>

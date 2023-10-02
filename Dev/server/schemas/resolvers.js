@@ -39,6 +39,11 @@ const { GraphQLScalarType, Kind } = require("graphql");
       const singleGame = Question.find({ gameId: gameId }).populate("gameId");
       return singleGame;
     },
+    questions: async (parent, {gameId}) => {
+      const questions = Question.find({gameId});
+      console.log(questions);
+      return questions;
+    }
   },
 
   Mutation: {
@@ -94,10 +99,13 @@ const { GraphQLScalarType, Kind } = require("graphql");
           questionAuthor: context.user.name,
           gameId,
         });
-        context.user.questions.push(newQuestion._id);
-        await context.user.save();
-
-        return { newQuestion };
+        await Profile.findByIdAndUpdate(
+          context.user._id,
+          {$push: {questions: newQuestion._id}},
+          {new:true}
+        )
+        
+        return newQuestion ;
       }
       throw new AuthenticationError;
     },
