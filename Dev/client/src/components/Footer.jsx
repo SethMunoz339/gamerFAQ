@@ -12,16 +12,17 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Made with{" "}
+          Created by the CodeDragon{" "}
           <span
             className="emoji"
             role="img"
-            aria-label="heart"
+            aria-label="dragon"
             aria-hidden="false"
           >
-            ❤️
+            {" "}
+            🐉
           </span>{" "}
-          by the Tech Thoughts team.
+          Squad!
         </h4>
       </div>
     </footer>
