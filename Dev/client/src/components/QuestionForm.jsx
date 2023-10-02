@@ -7,7 +7,7 @@ import { QUERY_QUESTIONS, QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
-const QuestionForm = () => {
+const QuestionForm = ({gameId}) => {
   const [questionText, setQuestionText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
@@ -23,9 +23,10 @@ const QuestionForm = () => {
       const { data } = await addQuestion({
         variables: {
           questionText,
-          questionAuthor: Auth.getProfile().data.username,
+          gameId
         },
       });
+      console.log(data.addQuestion)
 
       setQuestionText("");
     } catch (err) {

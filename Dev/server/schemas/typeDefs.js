@@ -46,6 +46,7 @@ const typeDefs = `
     profile(profileId: ID!): Profile
     me: Profile
     game(gameId: ID!): Game
+    questions(gameId: ID!): [Question]
   }
 
 
