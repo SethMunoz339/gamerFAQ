@@ -24,6 +24,7 @@ const Footer = () => {
           </span>{" "}
           Squad!
         </h4>
+        <h4>Akash, Brandon, Ryan, & Seth</h4>
       </div>
     </footer>
   );
