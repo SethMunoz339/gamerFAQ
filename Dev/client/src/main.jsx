@@ -27,11 +27,11 @@ const router = createBrowserRouter([
       }, {
         path: '/single-game/:gameId',
         element: <SingleGame />
-      },{
+      }
       
-        path: '/profiles/:profileId',
-        element: <Profile />
-      },
+      //   path: '/profiles/:profileId',
+      //   element: <Profile />
+      // },
       // {
       //   path: '/me',
       //   element: <Profile />
