@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 
-import QuestionList from "../components/QuestionList";
-import QuestionForm from "../components/QuestionForm";
-import Games from "../components/Games";
+import QuestionList from "./QuestionList";
+import QuestionForm from "./QuestionForm";
+import Games from "./Games";
 import { QUERY_QUESTIONS } from "../utils/queries";
 
 const Home = () => {
