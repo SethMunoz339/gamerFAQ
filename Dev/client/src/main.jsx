@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import SingleGame from './components/SingleGame';
+import Me from './components/Me';
 // import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       }, {
         path: '/single-game/:gameId',
         element: <SingleGame />
+      },
+      {
+        path: '/me',
+        element: <Me />
       }
       
       //   path: '/profiles/:profileId',
