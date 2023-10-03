@@ -30,10 +30,11 @@ export const ADD_COMMENT = gql`
       _id
       questionText
       questionAuthor
-      createdAt
+      questionCreatedAt
       comments {
         _id
         commentText
+        commentCreatedAt
       }
     }
   }

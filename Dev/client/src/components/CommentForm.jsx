@@ -13,14 +13,12 @@ const CommentForm = ({ questionId }) => {
   const [addComment, { error }] = useMutation(ADD_COMMENT);
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
+    
     try {
       const { data } = await addComment({
         variables: {
           questionId,
-          commentText,
-          commentAuthor: Auth.getProfile().data.username,
+          commentText
         },
       });
 
