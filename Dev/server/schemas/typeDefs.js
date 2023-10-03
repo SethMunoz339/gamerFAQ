@@ -37,8 +37,10 @@ const typeDefs = `
   }
 
   type Comment {
+    _id: ID
     commentText: String!
     commentAuthor: String!
+    commentCreatedAt: Date
   }
 
   type Query {

@@ -22,14 +22,8 @@ const questionSchema = new Schema({
     },
     comments: [
         {
-            commentText: {
-                type: String,
-                required: true
-            },
-            commentAuthor: {
-                type: String,
-                required: true,
-            },
+            type: Schema.Types.ObjectId,
+            ref: 'Comment',
         },
     ],
 });

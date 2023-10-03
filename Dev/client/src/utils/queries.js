@@ -55,6 +55,7 @@ query questions($gameId: ID!) {
     comments {
       commentText
       commentAuthor
+      commentCreatedAt
     }
   }
 }

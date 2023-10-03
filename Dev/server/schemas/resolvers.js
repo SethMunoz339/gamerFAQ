@@ -1,4 +1,4 @@
-const { Profile, Game, Question } = require("../models");
+const { Profile, Game, Question, Comment } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 const { GraphQLScalarType, Kind } = require("graphql");
 
@@ -40,8 +40,7 @@ const { GraphQLScalarType, Kind } = require("graphql");
       return singleGame;
     },
     questions: async (parent, {gameId}) => {
-      const questions = Question.find({gameId});
-      console.log(questions);
+      const questions = Question.find({gameId}).populate("comments");
       return questions;
     }
   },
@@ -122,12 +121,17 @@ const { GraphQLScalarType, Kind } = require("graphql");
 
     addComment: async (parent, { questionId, commentText }, context) => {
       if (context.user) {
+        const newComment = await Comment.create({
+          commentText,
+          commentAuthor: context.user.name
+        });
+
+        console.log(newComment);
+
         return Question.findOneAndUpdate(
           { _id: questionId },
           {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.name },
-            },
+            $push: {comments: newComment._id},
           },
           {
             new: true,
