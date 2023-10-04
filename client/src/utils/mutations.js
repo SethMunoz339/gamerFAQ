@@ -41,17 +41,49 @@ export const ADD_COMMENT = gql`
 `;
 
 export const ADD_QUESTION = gql`
-mutation addQuestion($gameId: ID!, $questionText: String!) {
-  addQuestion(gameId: $gameId, questionText: $questionText) {
-    _id
-    questionText
-    questionAuthor
-    questionCreatedAt
-    gameId
-    comments {
-      commentText
-      commentAuthor
+  mutation addQuestion($gameId: ID!, $questionText: String!) {
+    addQuestion(gameId: $gameId, questionText: $questionText) {
+      _id
+      questionText
+      questionAuthor
+      questionCreatedAt
+      gameId
+      comments {
+        commentText
+        commentAuthor
+      }
     }
   }
-}
+`;
+
+export const DELETE_QUESTION = gql`
+  mutation deleteQuestion($questionId: ID!) {
+    deleteQuestion(questionId: $questionId) {
+      _id
+      questionText
+      questionAuthor
+      questionCreatedAt
+      gameId
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($questionId: ID!, $commentId: ID!) {
+    removeComment(questionId: $questionId, commentId: $commentId) {
+      _id
+      questionText
+      questionAuthor
+      questionCreatedAt
+      gameId
+      comments {
+        _id
+        commentText
+        commentAuthor
+      }
+    }
+  }
 `;
